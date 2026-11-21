@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA 6 Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="tagline">Every trophy, its official name and description, a cited guide in plain words, and a tracker that remembers your progress. Works fully offline — no network, no account, no ads.</p>
+  </div>
+  <div class="progress-card" id="progress-card">
+    <p class="progress-big"><span id="earned-count">0</span><span class="of"> / 55</span></p>
+    <div class="bar" role="progressbar" aria-label="Trophies earned"><div class="bar-fill" id="bar-fill"></div></div>
+    <p class="progress-pct" id="progress-pct">0% to the Platinum</p>
+    <p class="grade-counts" id="grade-counts"></p>
+    <p class="estimate">Platinum estimate: ~200 hours &middot; Difficulty 4/10 &middot; 0 online trophies</p>
+  </div>
+</header>
+
+<section class="missable-banner" id="missable-banner" aria-label="Missable trophy warning">
+  <strong>&#9888; The one missable trophy</strong>
+  <p><strong>Positive Mental Attitude</strong> — meditate at all 18 spots. The balcony meditation with Lucia on the morning after the mission &lsquo;Down to Earth&rsquo;, before you leave Chapter 1, cannot be repeated: there is no mission replay. Do it before Chapter 1 ends and keep a manual save. Every other trophy can be earned in free roam after the story.</p>
+  <button type="button" id="missable-jump">Show the missable trophy</button>
+</section>
+
+<section class="roadmap" id="roadmap">
+  <h2>Roadmap to the Platinum</h2>
+  <p class="roadmap-intro">Three stages, in order. The stages below are built from the official trophy descriptions: which story chapters and missions, which collectibles and counts.</p>
+  <ol class="stages" id="roadmap-stages"></ol>
+</section>
+
+<section class="controls" aria-label="Filters and progress tools">
+  <div class="control-row">
+    <label class="search-label">Search <input id="search" type="search" placeholder="Trophy name, mission, activity…" autocomplete="off"></label>
+    <label>Kind
+      <select id="kind">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="missable">Missable</option>
+        <option value="collectible">Collectibles</option>
+        <option value="activity">Activities</option>
+        <option value="platinum">Platinum</option>
+      </select>
+    </label>
+    <label>Grade
+      <select id="grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label>Status
+      <select id="status">
+        <option value="all">Earned &amp; remaining</option>
+        <option value="earned">Earned only</option>
+        <option value="remaining">Remaining only</option>
+      </select>
+    </label>
+    <label class="spoiler-label"><input id="spoiler" type="checkbox"> Hide story spoilers</label>
+  </div>
+  <div class="control-row">
+    <button id="export" type="button">Export progress (JSON)</button>
+    <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
+    <button id="reset" type="button">Reset progress</button>
+    <span class="filter-count" id="filter-count"></span>
+  </div>
+  <p class="spoiler-note">Spoiler setting: while on, the names and descriptions of story trophies stay hidden until you earn them. Your setting is saved with your progress.</p>
+</section>
+
+<main>
+  <h2 class="list-heading">The 55 trophies</h2>
+  <p class="list-note">Tick a trophy to mark it earned — it saves instantly in this browser. Open a trophy to read its guide and its sources.</p>
+  <ul class="trophy-list" id="trophy-list"></ul>
+  <p class="empty" id="empty" hidden>No trophies match these filters. Clear the search or pick another kind.</p>
+</main>
+
+<footer>
+  <p>Names, descriptions and grades are the official PlayStation 5 list as published (Exophase / PSNProfiles). Guides are written in our own words for this guide; each one names its sources — PushSquare, KeenGamer, Mobalytics and Endgame Tools (citing PowerPyx). No Rockstar Games logo, artwork or game imagery is used here. The app loads only its own files and makes no network request.</p>
+  <p class="credit">Leonida Trophy Guide — an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide is not affiliated with or endorsed by Rockstar Games.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>

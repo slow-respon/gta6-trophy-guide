@@ -1,0 +1,149 @@
+/* Leonida Trophy Guide — dark theme, trophy-gold accent, no external assets. */
+:root {
+  --bg: #0f1116;
+  --surface: #181b23;
+  --surface-2: #20242f;
+  --line: #2c3140;
+  --text: #eef0f4;
+  --muted: #a7adbd;
+  --gold: #e8c15a;
+  --gold-dim: #b9973f;
+  --platinum: #9fd8e8;
+  --gold-grade: #e8c15a;
+  --silver-grade: #c9d1d9;
+  --bronze-grade: #d08a4e;
+  --danger: #ff7a6b;
+  --green: #7fd08a;
+  --radius: 10px;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0; background: var(--bg); color: var(--text);
+  line-height: 1.5;
+}
+.hero {
+  display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between;
+  padding: 28px 24px 20px; max-width: 1180px; margin: 0 auto;
+}
+.hero-text { flex: 1 1 480px; }
+.eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; margin: 0 0 6px; }
+h1 { font-size: 40px; line-height: 1.1; margin: 0 0 10px; }
+.tagline { color: var(--muted); max-width: 56ch; margin: 0; }
+.progress-card {
+  flex: 0 1 330px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 16px 18px;
+}
+.progress-big { font-size: 34px; font-weight: 800; margin: 0; color: var(--gold); }
+.progress-big .of { font-size: 20px; color: var(--muted); font-weight: 600; }
+.bar { height: 10px; background: var(--surface-2); border-radius: 6px; margin: 10px 0 6px; overflow: hidden; }
+.bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--gold-dim), var(--gold)); border-radius: 6px; transition: width .3s; }
+.progress-pct { margin: 0 0 6px; font-weight: 600; }
+.grade-counts { margin: 0 0 4px; color: var(--muted); font-size: 13px; }
+.estimate { margin: 0; color: var(--muted); font-size: 13px; }
+
+.missable-banner {
+  max-width: 1180px; margin: 0 auto 18px; padding: 14px 18px;
+  background: #2a1713; border: 1px solid #5a2b22; border-radius: var(--radius);
+}
+.missable-banner strong { color: var(--danger); }
+.missable-banner p { margin: 6px 0 10px; }
+.missable-banner button, .controls button, .import {
+  background: var(--surface-2); color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px; padding: 7px 12px; font: inherit; font-size: 14px; cursor: pointer;
+}
+.missable-banner button:hover, .controls button:hover { border-color: var(--gold); }
+
+.roadmap { max-width: 1180px; margin: 0 auto; padding: 0 24px 8px; }
+h2 { font-size: 24px; margin: 18px 0 6px; }
+.roadmap-intro { color: var(--muted); margin: 0 0 12px; }
+.stages { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.stages li {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.stage-num {
+  display: inline-block; background: var(--gold); color: #191204; font-weight: 800;
+  border-radius: 999px; padding: 2px 10px; font-size: 13px; margin-bottom: 6px;
+}
+.stages h3 { margin: 0 0 6px; font-size: 17px; }
+.stages p { margin: 0; color: var(--muted); font-size: 14px; }
+
+.controls {
+  max-width: 1180px; margin: 10px auto 0; padding: 12px 24px;
+  background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.control-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 6px 0; }
+.controls label { font-size: 14px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+.controls input[type="search"], .controls select {
+  background: var(--surface-2); color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px; padding: 7px 10px; font: inherit; font-size: 14px;
+}
+.controls input[type="search"] { min-width: 260px; }
+.controls input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--gold); }
+.import input { display: none; }
+.import { cursor: pointer; }
+.filter-count { margin-left: auto; color: var(--muted); font-size: 14px; }
+.spoiler-note { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
+
+main { max-width: 1180px; margin: 0 auto; padding: 0 24px 24px; }
+.list-heading { margin-top: 20px; }
+.list-note { color: var(--muted); margin: 0 0 14px; }
+.trophy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.trophy {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 12px 14px;
+}
+.trophy.earned { border-color: var(--gold-dim); }
+.trophy-row { display: flex; gap: 12px; align-items: flex-start; }
+.trophy input[type="checkbox"] { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--gold); flex: none; cursor: pointer; }
+.trophy-body { flex: 1; min-width: 0; }
+.trophy-name { font-size: 17px; font-weight: 700; margin: 0; }
+.trophy.earned .trophy-name { color: var(--gold); }
+.trophy-desc { color: var(--muted); margin: 2px 0 6px; font-size: 14px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+.badge {
+  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  border-radius: 999px; padding: 2px 9px; border: 1px solid var(--line);
+}
+.badge.platinum { color: var(--platinum); border-color: var(--platinum); }
+.badge.gold { color: var(--gold-grade); border-color: var(--gold-grade); }
+.badge.silver { color: var(--silver-grade); border-color: var(--silver-grade); }
+.badge.bronze { color: var(--bronze-grade); border-color: var(--bronze-grade); }
+.tag { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; }
+.tag.missable { color: var(--danger); border-color: var(--danger); font-weight: 700; }
+.tag.count { color: var(--gold); border-color: var(--gold-dim); }
+.guide-toggle {
+  background: none; border: none; color: var(--gold); font: inherit; font-size: 14px;
+  font-weight: 600; cursor: pointer; padding: 0;
+}
+.guide { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px; }
+.guide p { margin: 0 0 8px; }
+.guide h4 { margin: 10px 0 4px; font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.guide ol { margin: 0 0 8px; padding-left: 20px; }
+.guide li { margin: 2px 0; }
+.missable-note { background: #2a1713; border: 1px solid #5a2b22; border-radius: 8px; padding: 8px 10px; margin: 0 0 8px; font-size: 14px; }
+.sources { list-style: none; margin: 0; padding: 0; font-size: 13px; }
+.sources li { margin: 2px 0; }
+.sources a { color: var(--gold); }
+.hidden-name { color: var(--muted); font-style: italic; }
+.empty { color: var(--muted); }
+footer { max-width: 1180px; margin: 0 auto; padding: 0 24px 32px; color: var(--muted); font-size: 13px; }
+footer .credit { margin-top: 8px; }
+@media (max-width: 640px) {
+  h1 { font-size: 30px; }
+  .controls input[type="search"] { min-width: 0; flex: 1; }
+}
+
+/* Deterministic shot mode: hide the roadmap on the shots that are about the
+   checklist, so the progress bar, filters and trophy cards fit in one frame. */
+body.shot-checklist .roadmap,
+body.shot-detail .roadmap,
+body.shot-spoiler .roadmap { display: none; }
+body.shot-checklist .missable-banner { display: none; }
+body.shot-checklist .tagline,
+body.shot-detail .tagline,
+body.shot-spoiler .tagline { display: none; }
+body.shot-checklist h1,
+body.shot-detail h1,
+body.shot-spoiler h1 { font-size: 30px; }
